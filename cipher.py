@@ -540,6 +540,10 @@ def get_val(cha: chr):
         return ch - 65
     elif 74 <= ch <= 90:
         return ch - 66
+    if 97 <= ch <= 105:
+        return ch - 65 - 32
+    elif 106 <= ch <= 122:
+        return ch - 66 - 32
     else:
         return -1
 
