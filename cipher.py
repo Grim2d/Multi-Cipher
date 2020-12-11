@@ -1,6 +1,8 @@
-# Lots of code from rewatching lecture vids, thank you for the explanations prof!
-
-
+#Course Number:		CIS4362
+#Course Name:		Cryptology
+#Assignment Name:	Multi Cipher
+#My Name:			Stephen Wehlburg
+#Date:				December 10th 2020
 import curses
 from curses import wrapper
 from curses.textpad import Textbox, rectangle
@@ -12,6 +14,7 @@ from subprocess import STDOUT,PIPE
 import time
 
 
+#States for state machine
 class options(Enum):
     BASE = 0
     READ_FILE = 1
@@ -28,11 +31,13 @@ class options(Enum):
     INVALID = 9
 
 
+#Helper function to center text
 def centeredText(background, num_cols, row, text):
     start_posit = int(num_cols/2) - int(len(text) / 2)
     background.addstr(row, start_posit, text)
 
 
+#The basic menu
 def base_menu(background, text, r, key1, key2, bench, status):
     rectangle(background, 0, 0, 30, 79)
     centeredText(background, 80, 1, "Welcome to the Multi Cipher App!")
@@ -57,6 +62,7 @@ def base_menu(background, text, r, key1, key2, bench, status):
     background.addstr(31, 1, 'Status: ' + status)
 
 
+#When info needs to be prompted
 def prompt_menu(background, prompt, prompt_input):
     rectangle(background, 22, 1, 27, 78)
     centeredText(background, 80, 23, prompt)
@@ -64,11 +70,13 @@ def prompt_menu(background, prompt, prompt_input):
     background.addstr(25, 7, prompt_input)
 
 
+#So the code doesn't just stall
 def pre_benchmark(background):
     rectangle(background, 22, 1, 29, 78)
     centeredText(background, 80, 23, "Running benchmarks.... ")
 
 
+#Big menu to show the benchmarks
 def benchmark_menu(background,
                    p_rail_timer, p_caesar_timer, p_trans_timer, p_four_timer,
                    c_rail_timer, c_caesar_timer, c_trans_timer, c_four_timer,
@@ -91,6 +99,7 @@ def benchmark_menu(background,
     centeredText(background, 80, 28, j_msg)
 
 
+#The main program
 def run_gui(background):
     text = "HELLOWORLDFIGHTME"
     r = 3

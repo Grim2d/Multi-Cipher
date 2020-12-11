@@ -1,3 +1,8 @@
+//Course Number:	CIS4362
+//Course Name:		Cryptology
+//Assignment Name:	Multi Cipher
+//My Name:			Stephen Wehlburg
+//Date:				December 10th 2020
 #include <cstdint>
 #include <vector>
 #include <set>

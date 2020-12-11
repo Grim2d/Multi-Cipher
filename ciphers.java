@@ -1,3 +1,8 @@
+//Course Number:	CIS4362
+//Course Name:		Cryptology
+//Assignment Name:	Multi Cipher
+//My Name:			Stephen Wehlburg
+//Date:				December 10th 2020
 import java.io.*;
 import java.util.*;
 import java.math.*;
