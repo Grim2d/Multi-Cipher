@@ -1,0 +1,3 @@
+/mnt/c/Users/steph/Desktop/School/Programming/Exercise 3/XORCipher/CMake_Build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/steph/Desktop/School/Programming/Exercise 3/XORCipher/CMake_Build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/steph/Desktop/School/Programming/Exercise 3/XORCipher/CMake_Build/CMakeFiles/xorcipher.dir
