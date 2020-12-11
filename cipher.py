@@ -300,25 +300,25 @@ def run_gui(background):
                         text = prompt_input.strip()
                         status = "New text loaded into memory from user input."
         elif prompt_state == options.APPLY_PYTHON:
-            text = four(text, "PANTS", "HECK")
+            text = four(text, key1, key2)
             status = "Applied Python cipher."
             prompt_state = options.BASE
         elif prompt_state == options.APPLY_C:
             buffer = create_string_buffer(len(text) + 1)
             library.four(text.encode("cp437"),
                          buffer,
-                         len(text),
-                         "PANTS".encode("cp437"),
-                         len("PANTS".encode("cp437")),
-                         "HECK".encode("cp437"),
-                         len("HECK".encode("cp437"))
+                         len(text) + 1,
+                         key1.encode("cp437"),
+                         len(key1.encode("cp437")),
+                         key2.encode("cp437"),
+                         len(key2.encode("cp437"))
                          )
             text = buffer.raw.decode("cp437")
             text = text[:-1]
             status = "Applied C cipher."
             prompt_state = options.BASE
         elif prompt_state == options.APPLY_JAVA:
-            text = execute_java('ciphers.java', str(1) + ' 3 ' + text + ' PANTS HECK').decode("cp437")
+            text = execute_java('ciphers.java', str(bench) + ' 3 ' + text + ' ' + key1 + ' ' + key2).decode("cp437")
             status = "Applied Java cipher."
             prompt_state = options.BASE
         elif prompt_state == options.CHANGE_R:
